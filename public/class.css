@@ -4,18 +4,37 @@
 
 .jumbotron {
   background-color: darkblue;
-  color: lightgray;
+  color: silver;
+  padding: 8px;
   
 }
 
 h1 {
-  font-size: 50px;
-}
-
-h2 {
   font-size: 40px;
 }
 
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 25px;
+}
+
 body {
-  background-color: silver;
+  background-color: lightgray;
+}
+
+.card {
+  background-color: darkblue;
+  color: whitesmoke;
+  margin-left: 20%;
+  margin-bottom: 25px;
+  width: 25rem;
+
+}
+
+li {
+  color: black;
+  font-size: .9rem;
 }

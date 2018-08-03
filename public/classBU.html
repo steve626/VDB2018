@@ -59,26 +59,20 @@
 
       for (var i = 0; i < studentData.length; i++ ) {
         
-        
-        var studentSection = $('<div>');          
+        var studentSection = $('<div>');
+          studentSection.addClass('card');
+          studentSection.attr('id', 'studentWell-' + i);
           $('#studentSection').append(studentSection);
-          const parentStr = [studentData[i].parent1, studentData[i].parent2].filter(Boolean).join(' & ');
-          studentSection.addClass('card')
-          .append('<div class="card-header"><h3>' + studentData[i].firstName + ' ' + studentData[i].lastName + '</h3></div>')
-          .append('<ul class="list-group list-group-flush>')
-          .append('<li class="list-group-item"><h5>Parent(s):</h5>' + parentStr +' </li>')
-        if (studentData[i].contact1) {
-          studentSection.append('<li class="list-group-item">' +  'phone: ' + studentData[i].contact1 + '<br> email: ' + studentData[i].email1 + '</li>')
-          }
-        if (studentData[i].contact2) {
-          studentSection.append('<li class="list-group-item">' + 'phone: ' + studentData[i].contact2 + '<br> email: ' + studentData[i].email2 + '</li>')
-        }
-          studentSection.append('</ul>')
-          studentSection.append('</div>');  
-                
+          $('#studentWell-' + i ).append('<h3>' + studentData[i].firstName + ' ' + studentData[i].lastName + '</h3>');
+          $('#studentWell-' + i ).append('<h4>Parent(s): </h4>');
+          $('#studentWell-' + i ).append('<h5>' + studentData[i].parent1 + ' & ' + studentData[i].parent2 + '<br> phone: ' + studentData[i].contact1 + '<br> email: ' + studentData[i].email1 + '</h5>');
+          $('#studentWell-' + i ).append('<h5>' + 'phone: ' + studentData[i].contact2 + '<br> email: ' + studentData[i].email2 + '</h5>');
+        
       }
     });
-  }  
+  }
+  
+  // showStudents();
 
 </script>
 </html>

@@ -5,9 +5,8 @@ var studentArray =[
     parent1: "Brett Andreasen",
     parent2: "Camille Andreasen",
     contact1: "480-471-8862",
-    contact2: null,
-    email1: "candreasen@cox.net",
-    email2: null
+    contact2: null,    
+    email1: "candreasen@cox.net"
     
   },
   {
@@ -18,7 +17,7 @@ var studentArray =[
     contact1: "480-352-3431",
     contact2: "602-478-3045",
     email1: "mandiauxier@gmail.com",
-    email2: null
+    email2: "mandiauxier@gmail.com"
     
   },
   
@@ -255,4 +254,5 @@ var studentArray =[
     email2: "taylorcheny01@gmail.com",
     
   }
- ]
+ ];
+ module.exports = studentArray;
