@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>First Grade 2018</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../assets/class.css">
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-offset-2 col xs-8">
+              <h1>Mrs. Van De Bueken's Class</h1>
+              <h2>Room 6, 2018</h2>
+          </div>
+          <div class="col-xs-s">
+              <img src="../assets/images/weinberg-logo.png" class="float-right" id="logo" alt="Weinberg Logo"> 
+          </div>
+        </div>
+      </div>     
+    </div>
+  </div>
+  <div class="container" id="studentSection">
+    <div class="row">
+      <div class="col-xs-offset-3 col dx-6">
+        <div class="panel panel-default">
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+<script type="text/javascript">
+
+  function showStudents() {
+    
+    var currentURL = window.location.origin;
+
+    $.ajax({ url: currentURL + '/api/students', method: 'GET'})
+    .then(function(studentData) {
+
+      for (var i = 0; i < tableData.length; i++ ) {
+        var studentSection = $('<div>');
+          studentSection.addClass('well');
+          studentSection.attr('id', 'studentWell-' + i + 1);
+          $('#studentSection').append(studentSection);
+
+          $('#studentWell-' + i + 1 ).append('<h3>Name: ' + studentData[i].firstName + ' ' + studentData[i].lastName + '</h3>');
+          $('#studentWell-' + i + 1 ).append('<h4>Parent(s): ' + studentData[i].parent1 + '\n phone: ' + studentData[i].contact1 + '\n email: ' + studentData[i].email1 + '</h4>');
+          $('#studentWell-' + i + 1 ).append('<h4>' + studentData[i].parent2 + '\n phone: ' + studentData[i].contact2 + '\n email: ' + studentData[i].email2 + '</h4>');
+
+      }
+    });
+  }
+
+  showStudents();
+
+</script>
+</html>

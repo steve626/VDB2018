@@ -1,0 +1,21 @@
+#logo {
+  padding-right: 25px
+}
+
+.jumbotron {
+  background-color: darkblue;
+  color: lightgray;
+  
+}
+
+h1 {
+  font-size: 50px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+body {
+  background-color: silver;
+}
